@@ -33,16 +33,18 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
+        // Player Shooting
        if (Input.GetKeyDown(KeyCode.Space) && gameObject.tag == "Player")
         {
             Fire();
         }
 
-        if ((fireCountdown <= 0f) && (gameObject.tag == "Enemy"))
-        {
-            Fire();
-            fireCountdown = 1f / fireRate;
-        }
-        fireCountdown -= Time.deltaTime;
+       // Boss Shooting
+       if ((fireCountdown <= 0f) && (gameObject.tag == "Enemy"))
+       {
+           Fire();
+           fireCountdown = 1f / fireRate;
+       }
+       fireCountdown -= Time.deltaTime;
     }
 }

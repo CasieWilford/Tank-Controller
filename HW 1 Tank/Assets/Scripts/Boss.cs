@@ -11,8 +11,13 @@ public class Boss : MonoBehaviour
 
     private int current;
 
+    private void Start()
+    {
+    }
+
     void Update()
     {
+        // Moving boss between waypoints.
         if (transform.position != waypoint[current].position)
         {
             Vector3 pos = Vector3.MoveTowards(transform.position, waypoint[current].position, bossSpeed * Time.deltaTime);

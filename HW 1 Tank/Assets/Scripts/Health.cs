@@ -5,11 +5,21 @@ using UnityEngine;
 public class Health : MonoBehaviour, IKillable, IDamageable<int>
 {
     public int currentHealth;
-    public int maxHealth = 3;
+    public int enemyMaxHealth = 3;
+    public int bossMaxHealth = 7;
+
+
 
     void Start()
     {
-        currentHealth = maxHealth;
+        if (gameObject.tag == "Enemy")
+        {
+            currentHealth = enemyMaxHealth;
+        }
+        else if (gameObject.tag == "Boss")
+        {
+            currentHealth = bossMaxHealth;
+        }
     }
 
     public void TakeDamage(int damageTaken)

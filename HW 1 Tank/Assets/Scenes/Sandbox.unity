@@ -520,6 +520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 245942851}
+  - component: {fileID: 245942852}
   m_Layer: 0
   m_Name: Bomb Spawn
   m_TagString: Untagged
@@ -541,6 +542,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &245942852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245942850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7120e8747aae51841be82baa2cd9577e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffect: {fileID: 0}
+  radius: 5
+  bomb: {fileID: 7574451155275363160, guid: b3c2317b14f371f4684d6c5219bde5f6, type: 3}
 --- !u!1 &362818434
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletspeed: 1100
-  bullet: {fileID: 5576392158212087403, guid: 1395773e223f397439d716ab687d0ab7, type: 3}
+  bullet: {fileID: 5576392158212087403, guid: dac239fb52e3333468dcd8437a04c946, type: 3}
   fireRate: 1
 --- !u!1 &732590192
 GameObject:
@@ -864,7 +880,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732590192}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -989,10 +1005,13 @@ GameObject:
   m_Component:
   - component: {fileID: 812268055}
   - component: {fileID: 812268054}
+  - component: {fileID: 812268058}
   - component: {fileID: 812268053}
+  - component: {fileID: 812268056}
+  - component: {fileID: 812268057}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1048,6 +1067,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &812268056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812268052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49ca1a8f45ada941adb0a5b40c20f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageAmount: 1
+  _healthAmount: 7
+  _impactParticles: {fileID: 0}
+  _impactSound: {fileID: 0}
+--- !u!114 &812268057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812268052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd28357014cb32488b0b366c6299e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 7
+  enemyMaxHealth: 3
+  bossMaxHealth: 7
+--- !u!65 &812268058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812268052}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 1, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &849007890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,7 +1459,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 3
-  maxHealth: 3
+  enemyMaxHealth: 3
+  bossMaxHealth: 7
 --- !u!1 &913282366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2943,5 +3007,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletspeed: 1100
-  bullet: {fileID: 5576392158212087403, guid: 1395773e223f397439d716ab687d0ab7, type: 3}
+  bullet: {fileID: 5576392158212087403, guid: dac239fb52e3333468dcd8437a04c946, type: 3}
   fireRate: 1

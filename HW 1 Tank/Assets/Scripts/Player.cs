@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField] int _maxHealth = 3;
-    int _currentHelath;
+    int _currentHealth;
 
     TankController _tankController;
 
@@ -19,20 +19,20 @@ public class Player : MonoBehaviour
     // Level starts, current health is set to max amount.
     private void Start()
     {
-        _currentHelath = _maxHealth;
+        _currentHealth = _maxHealth;
     }
 
     public void IncreaseHealth(int amount)
     {
-        _currentHelath = Mathf.Clamp(_currentHelath, 0, _maxHealth);
-        Debug.Log("Player's health: " + _currentHelath);
+        _currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
+        Debug.Log("Player's health: " + _currentHealth);
     }
 
     public void DecreaseHealth(int amount)
     {
-        _currentHelath -= amount;
-        Debug.Log("Player's health: " + _currentHelath);
-        if (_currentHelath <= 0)
+        _currentHealth -= amount;
+        Debug.Log("Player's health: " + _currentHealth);
+        if (_currentHealth <= 0)
         {
             Kill();
         }
@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        // Press Esc to quit.
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();

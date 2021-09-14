@@ -10,11 +10,11 @@ public class Slower : Enemy
     {
         TankController controller = player.GetComponent<TankController>();
 
-        if (controller != null)
+        if ((controller != null) && (controller.MaxSpeed >= .15f))
         {
             controller.MaxSpeed -= _slowAmount;
             controller.MoveSpeed -= _slowAmount;
-            Debug.Log("Get SLOWEDDD");
+            Debug.Log("Player Slowed");
         }
     }
 }

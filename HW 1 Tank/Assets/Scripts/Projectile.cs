@@ -6,10 +6,11 @@ public class Projectile : MonoBehaviour
 {
     public float bulletspeed = 1100;
     public GameObject bullet;
+    public ParticleSystem muzzleFlash;
 
     public float fireRate = 1f;
     private float fireCountdown = 2f;
-
+    
     AudioSource bulletAudio;
 
     private void Start()
@@ -25,10 +26,10 @@ public class Projectile : MonoBehaviour
         tempRigidBodyBullet.AddForce(tempRigidBodyBullet.transform.forward * bulletspeed);
         Destroy(tempBullet, 1f);
 
-        // Play Audio.
-        //bulletAudio.Play();
-
-        // Add Particle.
+        // Play Firing Audio.
+        bulletAudio.Play();
+        // Firing Particle.
+        Instantiate(muzzleFlash, transform.position, transform.rotation);
     }
 
     void Update()

@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(TankController))]
 public class Player : MonoBehaviour
 {
-
     [SerializeField] int _maxHealth = 3;
     int _currentHealth;
+
+    public ParticleSystem deathParticle;
 
     TankController _tankController;
 
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
 
     public void IncreaseHealth(int amount)
     {
+        _currentHealth += amount;
         _currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
         Debug.Log("Player's health: " + _currentHealth);
     }
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour
 
     public void Kill()
     {
+        Instantiate(deathParticle, transform.position, transform.rotation);
         gameObject.SetActive(false);
         // Play particles and sounds.
     }
@@ -51,10 +54,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        // Press Esc to quit.
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
+        
     }
 }

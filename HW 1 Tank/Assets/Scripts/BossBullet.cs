@@ -2,11 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossBullet : Enemy
+public class BossBullet : MonoBehaviour
 {
-    public override void PlayerImpact(Player player)
+    public ParticleSystem bulletParticles;
+    public GameObject bulletCollisionAudio;
+
+    void Start()
     {
-        base.PlayerImpact(player);
-        gameObject.SetActive(false);
+        
+    }
+
+    void Update()
+    {
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Instantiate(bulletCollisionAudio, transform.position, transform.rotation);
+
+
+        var playerHealthComponent = collision.collider.GetComponent<Player>();
+
+        if(playerHealthComponent != null)
+        {
+            Debug.Log("Player hit by boss!");
+            playerHealthComponent.DecreaseHealth(1);
+        }
+
+        Instantiate(bulletParticles, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }

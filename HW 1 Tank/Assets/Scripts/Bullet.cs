@@ -4,10 +4,24 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public ParticleSystem bulletParticles;
+    public GameObject bulletCollisionAudio;
+
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log(collision.collider.name);
-
+        Instantiate(bulletCollisionAudio, transform.position, transform.rotation);
+        Instantiate(bulletParticles, transform.position, transform.rotation);
+       
         // Player shoots an enemy
         if (collision.transform.tag == "Enemy" || collision.transform.tag == "Boss")
         {
@@ -19,8 +33,7 @@ public class Bullet : MonoBehaviour
                 healthComponent.TakeDamage(1);
                 Debug.Log("this current health: " + healthComponent.currentHealth);
             }
-            // Hide bullet after collission.
-            gameObject.SetActive(false);
         }
+        gameObject.SetActive(false);
     }
 }

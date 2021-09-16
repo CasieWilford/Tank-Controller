@@ -123,3 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8e7a15f1ff98f4c96b8d8d6ec551b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletParticles: {fileID: 4034684735057808144, guid: 243d5098c9e3ba341b12d6ca5ebf83ab,
+    type: 3}
+  bulletCollisionAudio: {fileID: 7976088992017417580, guid: dea94591148f42048b1d88dea745103d,
+    type: 3}

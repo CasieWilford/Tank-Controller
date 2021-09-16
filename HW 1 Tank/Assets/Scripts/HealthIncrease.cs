@@ -10,6 +10,5 @@ public class HealthIncrease : CollectibleBase
     {
         player.IncreaseHealth(_healthAdded);
         player.IncreaseTreasure();
-
     }
 }

@@ -8,9 +8,7 @@ public class Boss : MonoBehaviour
     public float bossSpeed;
     private int movementNum = 1;
     public int spinSpeed = 100;
-
-
-
+    
     private int current;
 
     private void Start()

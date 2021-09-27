@@ -5,10 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(TankController))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] int _maxHealth = 3;
+    [SerializeField] FlashImage flashImage = null;
+    [SerializeField] int _maxHealth = 5;
     int _currentHealth;
 
+    public HealthBar healthBar;
+
     public ParticleSystem deathParticle;
+    private CameraShake shake;
 
     TankController _tankController;
 
@@ -21,6 +25,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _currentHealth = _maxHealth;
+        healthBar.SetMaxHealth(_maxHealth);
+        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<CameraShake>();
     }
 
     public void IncreaseHealth(int amount)
@@ -28,12 +34,17 @@ public class Player : MonoBehaviour
         _currentHealth += amount;
         _currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
         Debug.Log("Player's health: " + _currentHealth);
+        healthBar.SetHealth(_currentHealth);
     }
 
     public void DecreaseHealth(int amount)
     {
+        shake.CamShake();
+        flashImage.StartFlash();
+
         _currentHealth -= amount;
         Debug.Log("Player's health: " + _currentHealth);
+        healthBar.SetHealth(_currentHealth);
         if (_currentHealth <= 0)
         {
             Kill();

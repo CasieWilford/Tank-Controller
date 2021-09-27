@@ -9,7 +9,9 @@ public class Health : MonoBehaviour, IKillable, IDamageable<int>
     public int bossMaxHealth = 10;
 
     public ParticleSystem deathParticle;
-    
+
+    public HealthBar healthBar;
+
     void Start()
     {
         if (gameObject.tag == "Enemy")
@@ -19,6 +21,7 @@ public class Health : MonoBehaviour, IKillable, IDamageable<int>
         else if (gameObject.tag == "Boss")
         {
             currentHealth = bossMaxHealth;
+            healthBar.SetMaxHealth(bossMaxHealth);
         }
     }
 
@@ -30,6 +33,7 @@ public class Health : MonoBehaviour, IKillable, IDamageable<int>
     public void TakeDamage(int damageTaken)
     {
         currentHealth -= damageTaken;
+        healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
         {

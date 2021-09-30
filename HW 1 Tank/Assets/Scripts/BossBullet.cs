@@ -7,16 +7,6 @@ public class BossBullet : MonoBehaviour
     public ParticleSystem bulletParticles;
     public GameObject bulletCollisionAudio;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         Instantiate(bulletCollisionAudio, transform.position, transform.rotation);

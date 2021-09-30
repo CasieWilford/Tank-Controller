@@ -26,12 +26,19 @@ public class Bullet : MonoBehaviour
         if (collision.transform.tag == "Enemy" || collision.transform.tag == "Boss")
         {
             // Get Health
-            var healthComponent = collision.collider.GetComponent<Health>();
+            var enemyHealthComponent = collision.collider.GetComponent<Health>();
+            var bossHealthComponent = collision.collider.GetComponent<BossHealth>();
 
-            if (healthComponent != null)
+            if (enemyHealthComponent != null)
             {
-                healthComponent.TakeDamage(1);
-                Debug.Log("this current health: " + healthComponent.currentHealth);
+                enemyHealthComponent.TakeDamage(1);
+                Debug.Log("this current health: " + enemyHealthComponent.currentHealth);
+            }
+
+            if (bossHealthComponent != null)
+            {
+                bossHealthComponent.TakeDamage(1);
+                Debug.Log("this current health: " + bossHealthComponent.currentHealth);
             }
         }
         gameObject.SetActive(false);

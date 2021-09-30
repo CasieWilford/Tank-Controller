@@ -4,20 +4,28 @@ ScriptsOnlyBuild:
     - Bomb
     - Boss
     - BossBullet
+    - BossHealth
+    - BossZone
     - Bullet
     - BulletCollisionAudio
+    - CameraShake
     - DropBomb
     - Enemy
+    - EnemySpawner
+    - FlashImage
     - GameControls
     - Health
+    - HealthBar
     - HealthIncrease
     - Killer
+    - MoveCamera
     - Player
     - Projectile
     - Slower
     - SpeedIncrease
     - TankController
     - Treasure
+    - VictoryAudio
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
@@ -35,6 +43,8 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Sandbox.unity:
@@ -62,6 +72,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
@@ -70,6 +82,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -77,47 +93,67 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11338}
     - Class: 114
-      Script: {instanceID: 11536}
+      Script: {instanceID: 11422}
     - Class: 114
-      Script: {instanceID: 11544}
+      Script: {instanceID: 11538}
     - Class: 114
-      Script: {instanceID: 11730}
+      Script: {instanceID: 11546}
     - Class: 114
-      Script: {instanceID: 12020}
+      Script: {instanceID: 11590}
     - Class: 114
-      Script: {instanceID: 12084}
+      Script: {instanceID: 11732}
     - Class: 114
-      Script: {instanceID: 12124}
+      Script: {instanceID: 12002}
     - Class: 114
-      Script: {instanceID: 12432}
+      Script: {instanceID: 12008}
     - Class: 114
-      Script: {instanceID: 12464}
+      Script: {instanceID: 12026}
     - Class: 114
-      Script: {instanceID: 12644}
+      Script: {instanceID: 12090}
     - Class: 114
-      Script: {instanceID: 12700}
+      Script: {instanceID: 12130}
     - Class: 114
-      Script: {instanceID: 13076}
+      Script: {instanceID: 12258}
     - Class: 114
-      Script: {instanceID: 13186}
+      Script: {instanceID: 12412}
     - Class: 114
-      Script: {instanceID: 13302}
+      Script: {instanceID: 12442}
     - Class: 114
-      Script: {instanceID: 13320}
+      Script: {instanceID: 12474}
     - Class: 114
-      Script: {instanceID: 13352}
+      Script: {instanceID: 12654}
     - Class: 114
-      Script: {instanceID: 13704}
+      Script: {instanceID: 12710}
     - Class: 114
-      Script: {instanceID: 13776}
+      Script: {instanceID: 13056}
     - Class: 114
-      Script: {instanceID: 13786}
+      Script: {instanceID: 13064}
     - Class: 114
-      Script: {instanceID: 32076}
+      Script: {instanceID: 13090}
     - Class: 114
-      Script: {instanceID: 38056}
+      Script: {instanceID: 13124}
     - Class: 114
-      Script: {instanceID: 58740}
+      Script: {instanceID: 13202}
+    - Class: 114
+      Script: {instanceID: 13318}
+    - Class: 114
+      Script: {instanceID: 13336}
+    - Class: 114
+      Script: {instanceID: 13368}
+    - Class: 114
+      Script: {instanceID: 13572}
+    - Class: 114
+      Script: {instanceID: 13722}
+    - Class: 114
+      Script: {instanceID: 13762}
+    - Class: 114
+      Script: {instanceID: 13796}
+    - Class: 114
+      Script: {instanceID: 13806}
+    - Class: 114
+      Script: {instanceID: 13842}
+    - Class: 114
+      Script: {instanceID: 44068}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -169,6 +205,12 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameControls
+  - hash:
+      serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -193,7 +235,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: f2702c4a7b9b2dd69200dffe1669aa82
+      Hash: 29d02d75f99314a5e17f66702147cb37
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -319,6 +361,18 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
+      Hash: 850444ac652ec5367dbd3a769a0438e7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BossZone
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FlashImage
+  - hash:
+      serializedVersion: 2
       Hash: 7f89464a38a3d21f01ca98922942c09a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -361,6 +415,12 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: 9615f7da878e440b1b492fe058d47a67
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraShake
+  - hash:
+      serializedVersion: 2
       Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -373,7 +433,13 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 39940cf16fa70c4dade22b0033537bb4
+      Hash: b8b42ba420b738adfcdbdea870d5e6d5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemySpawner
+  - hash:
+      serializedVersion: 2
+      Hash: a9404993b73c0a09e73eb6bf5243c056
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Health
@@ -403,7 +469,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 95d546cd9c4427ef6d751628c29c42ad
+      Hash: e984a7d35082790cb337975e7d8b5e8d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -421,7 +487,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 95d546cd9c4427ef6d751628c29c42ad
+      Hash: e984a7d35082790cb337975e7d8b5e8d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Killer
@@ -481,6 +547,18 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: e6ad4cfe2f5e67dc3032d856dcbaadaf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MoveCamera
+  - hash:
+      serializedVersion: 2
+      Hash: d4e393a8abd963e4ffeeec78bdef149c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: VictoryAudio
+  - hash:
+      serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -493,7 +571,13 @@ ScriptsOnlyBuild:
     className: HealthIncrease
   - hash:
       serializedVersion: 2
-      Hash: be8610ce23150d71599361dce062bf94
+      Hash: 90304b3c014d90a972f3905ba4a3d3a5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DropBomb
+  - hash:
+      serializedVersion: 2
+      Hash: 1e743c6753a52ec9d747efb62e74b618
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Treasure
@@ -529,7 +613,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 95d546cd9c4427ef6d751628c29c42ad
+      Hash: e984a7d35082790cb337975e7d8b5e8d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Slower
@@ -545,6 +629,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BulletCollisionAudio
   - hash:
       serializedVersion: 2
       Hash: 8f15c253902ff4eef507927669b9dc80
@@ -593,6 +683,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMesh
+  - hash:
+      serializedVersion: 2
+      Hash: 1028c39545bcfa841aaab54121e69a47
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealthBar
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -655,24 +751,12 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 90304b3c014d90a972f3905ba4a3d3a5
+      Hash: 263674d41bcd2b82848dc871b69228dc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: DropBomb
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameControls
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BulletCollisionAudio
+    className: BossHealth
   platform: 19
   scenePathNames:
   - Assets/Scenes/Sandbox.unity
-  playerPath: C:/Users/Kc/Documents/Projects/Tank-Controller/HW 1 Tank/P01 Build/Tank
+  playerPath: C:/Users/Kc/Documents/Projects/Tank-Controller/HW 1 Tank/P01B Build/Tank
     Starter.exe

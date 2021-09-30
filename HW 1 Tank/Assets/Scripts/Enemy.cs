@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] int _damageAmount = 1;
-    [SerializeField] int _healthAmount = 3;
+    //[SerializeField] int _healthAmount = 3;
     [SerializeField] ParticleSystem _impactParticles;
     [SerializeField] AudioClip _impactSound;
 

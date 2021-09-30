@@ -25,6 +25,7 @@ public class GameControls : MonoBehaviour
         {
             Debug.Log("Scene reloaded.");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Treasure.currentTreasure = 0;
         }
     }
 }

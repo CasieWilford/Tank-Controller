@@ -5,20 +5,7 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     public GameObject explosionEffect;
-    float radius = 2f;
-    
-    //public GameObject bombSpawningParticle;
-    
-    void Start()
-    {
-        
-    }
-
-
-    void Update()
-    {
-
-    }
+    float radius = 3f;
 
     private void OnCollisionEnter(Collision collision)
     {

@@ -6,23 +6,15 @@ public class Health : MonoBehaviour, IKillable, IDamageable<int>
 {
     public int currentHealth;
     public int enemyMaxHealth = 3;
-    public int bossMaxHealth = 10;
 
     public ParticleSystem deathParticle;
 
-    public HealthBar healthBar;
+    AudioSource deathAudio;
 
     void Start()
     {
-        if (gameObject.tag == "Enemy")
-        {
-            currentHealth = enemyMaxHealth;
-        }
-        else if (gameObject.tag == "Boss")
-        {
-            currentHealth = bossMaxHealth;
-            healthBar.SetMaxHealth(bossMaxHealth);
-        }
+        currentHealth = enemyMaxHealth;
+        deathAudio = gameObject.GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -33,7 +25,6 @@ public class Health : MonoBehaviour, IKillable, IDamageable<int>
     public void TakeDamage(int damageTaken)
     {
         currentHealth -= damageTaken;
-        healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -43,10 +34,10 @@ public class Health : MonoBehaviour, IKillable, IDamageable<int>
 
     public void Kill()
     {
-        // death particle and sound
+        deathAudio.Play();
         Instantiate(deathParticle, transform.position, transform.rotation);
-        Destroy(gameObject);
-    }
+        Destroy(gameObject, .1f);
+    } 
 }
 
 

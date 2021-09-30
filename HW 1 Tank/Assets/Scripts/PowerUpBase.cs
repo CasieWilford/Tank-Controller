@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class PowerUpBase : MonoBehaviour
-{
+{ /*
     protected abstract void PowerUp(Player player);
 
     [SerializeField] float _powerupDuration = 1f;
@@ -20,5 +20,5 @@ public abstract class PowerUpBase : MonoBehaviour
     private void PowerDown()
     {
         gameObject.SetActive(false);
-    }
+    }*/
 }

@@ -8,12 +8,12 @@ public class Boss : MonoBehaviour
     public float bossSpeed;
     private int movementNum = 1;
     public int spinSpeed = 100;
-    
+
     private int current;
 
     private void Start()
     {
-
+        gameObject.SetActive(false);
     }
 
     void Update()
@@ -21,7 +21,8 @@ public class Boss : MonoBehaviour
         // Moving boss between waypoints.
         if (transform.position != waypoint[current].position)
         {
-            Vector3 pos = Vector3.MoveTowards(transform.position, waypoint[current].position, bossSpeed * Time.deltaTime);
+            Vector3 pos = Vector3.MoveTowards(transform.position, 
+                waypoint[current].position, bossSpeed * Time.deltaTime);
             GetComponent<Rigidbody>().MovePosition(pos);
 
             // Every 4 movements, make boss spin.
@@ -34,8 +35,6 @@ public class Boss : MonoBehaviour
         {
             current = (current + 1) % waypoint.Length;
             movementNum += 1;
-           
-            //Debug.Log(movementNum);
         }
     }
 }

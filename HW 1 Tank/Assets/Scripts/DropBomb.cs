@@ -9,7 +9,7 @@ public class DropBomb : MonoBehaviour
     int randomX;
     int randomZ;
 
-    public float maxTimer = 5;
+    public float maxTimer = 1f;
     public float timeRemaining;
     bool startDroppingBombs = false;
 
@@ -25,11 +25,11 @@ public class DropBomb : MonoBehaviour
 
         if (GameObject.Find("Boss") != null)
         {
-            var bossCurrentHealth = GameObject.Find("Boss").GetComponent<Health>();
+            var bossCurrentHealth = GameObject.Find("Boss").GetComponent<BossHealth>();
             // Once boss reaches a certain health, bombs begin dropping!
             if (bossCurrentHealth != null)
             {
-                if (startDroppingBombs && bossCurrentHealth.currentHealth <= 5)
+                if (startDroppingBombs && bossCurrentHealth.currentHealth <= 10)
                 {
                     DropBombs();
                 }
@@ -39,8 +39,8 @@ public class DropBomb : MonoBehaviour
 
     void DropBombs()
     {
-        randomX = Random.Range(-8, 8);
-        randomZ = Random.Range(-8, 8);
+        randomX = Random.Range(-18, 20);
+        randomZ = Random.Range(17, 46);
 
         GameObject tempBomb = Instantiate(bombPrefab, new Vector3(randomX, 20f, randomZ),
             transform.rotation) as GameObject;
@@ -59,7 +59,7 @@ public class DropBomb : MonoBehaviour
         else
         {
             startDroppingBombs = true;
-            timeRemaining = 5;
+            timeRemaining = 1f;
             //Debug.Log("Bomb time reset!");
         }
     }

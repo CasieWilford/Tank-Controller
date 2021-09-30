@@ -6,8 +6,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] FlashImage flashImage = null;
-    [SerializeField] int _maxHealth = 5;
+    [SerializeField] int _maxHealth = 10;
     int _currentHealth;
+
+    public GameObject deathAduio;
 
     public HealthBar healthBar;
 
@@ -19,6 +21,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _tankController = GetComponent<TankController>();
+        
     }
 
     // Level starts, current health is set to max amount.
@@ -27,6 +30,8 @@ public class Player : MonoBehaviour
         _currentHealth = _maxHealth;
         healthBar.SetMaxHealth(_maxHealth);
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<CameraShake>();
+
+        deathAduio.SetActive(false);
     }
 
     public void IncreaseHealth(int amount)
@@ -53,6 +58,7 @@ public class Player : MonoBehaviour
 
     public void Kill()
     {
+        deathAduio.SetActive(true);
         Instantiate(deathParticle, transform.position, transform.rotation);
         gameObject.SetActive(false);
         // Play particles and sounds.

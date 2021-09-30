@@ -18,6 +18,23 @@ public class Projectile : MonoBehaviour
         bulletAudio = GetComponent<AudioSource>();
     }
 
+    void Update()
+    {
+        // Player Shooting
+        if (Input.GetKeyDown(KeyCode.Space) && gameObject.tag == "Player")
+        {
+            Fire();
+        }
+
+        // Boss Shooting
+        if ((fireCountdown <= 0f) && (gameObject.tag == "Enemy"))
+        {
+            Fire();
+            fireCountdown = 1f / fireRate;
+        }
+        fireCountdown -= Time.deltaTime;
+    }
+
     void Fire()
     {
         // Shoot
@@ -30,22 +47,5 @@ public class Projectile : MonoBehaviour
         bulletAudio.Play();
         // Firing Particle.
         Instantiate(muzzleFlash, transform.position, transform.rotation);
-    }
-
-    void Update()
-    {
-        // Player Shooting
-       if (Input.GetKeyDown(KeyCode.Space) && gameObject.tag == "Player")
-        {
-            Fire();
-        }
-
-       // Boss Shooting
-       if ((fireCountdown <= 0f) && (gameObject.tag == "Enemy"))
-       {
-           Fire();
-           fireCountdown = 1f / fireRate;
-       }
-       fireCountdown -= Time.deltaTime;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Treasure : CollectibleBase
 {
-    [SerializeField] int _treasureAdded = 1;
+    //[SerializeField] int _treasureAdded = 1;
     public static int currentTreasure;
 
     public Text treasureText;
